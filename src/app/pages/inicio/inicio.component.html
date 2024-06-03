@@ -1,0 +1,40 @@
+<div class="card-container">
+     <mat-card>
+          <mat-card-header>
+               <mat-card-title>Lista Productos</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+               <table mat-table [dataSource]="listaProducto" class="mat-elevation-z8">
+
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="nombre">
+                         <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                         <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="marca">
+                         <th mat-header-cell *matHeaderCellDef> Marca </th>
+                         <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="precio">
+                         <th mat-header-cell *matHeaderCellDef> Precio </th>
+                         <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+               </table>
+
+
+
+
+          </mat-card-content>
+     </mat-card>
+</div>
